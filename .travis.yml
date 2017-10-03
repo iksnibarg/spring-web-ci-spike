@@ -3,6 +3,6 @@ language: java
 dist: trusty
 addons:
   chrome: stable
-after_script:
+before_script:
   - mvn spring-boot:run &
-  - sleep 10 && google-chrome-stable --headless --disable-gpu --dump-dom http://localhost:8080
+  - sleep 10 && google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222

@@ -5,4 +5,4 @@ addons:
   chrome: stable
 after_script:
   - mvn spring-boot:run &
-  - google-chrome-stable --headless --disable-gpu --dump-dom http://localhost:8080
+  - sleep 10 && google-chrome-stable --headless --disable-gpu --dump-dom http://localhost:8080

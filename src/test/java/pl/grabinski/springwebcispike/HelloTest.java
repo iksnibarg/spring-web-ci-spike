@@ -22,7 +22,7 @@ public class HelloTest {
         options.addArguments("--remote-debugging-port=9222");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        WebDriver driver = new RemoteWebDriver(new URL("localhost:8080"), capabilities);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:8080"), capabilities);
 
         driver.navigate().to("localhost:8080");
         assertEquals("hello Bob!", driver.findElement(By.tagName("body")).getText());

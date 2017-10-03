@@ -3,6 +3,6 @@ language: java
 dist: trusty
 addons:
   chrome: stable
-before_install:
+after_script:
   - mvn spring-boot:run &
   - google-chrome-stable --headless --disable-gpu --dump-dom http://localhost:8080

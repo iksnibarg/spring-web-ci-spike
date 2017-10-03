@@ -13,7 +13,10 @@ public class HelloTest {
     @Test
     public void checkWelcomePageContent() {
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("google-chrome-stable");
         options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--remote-debugging-port=9222");
         WebDriver driver = new ChromeDriver(options);
 
         driver.navigate().to("localhost:8080");
